@@ -1,0 +1,195 @@
+@use './mixin.scss' as m;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Righteous&display=swap');
+
+
+$font1: 'Comfortaa', cursive;
+$font2: 'Righteous', cursive;
+
+$color1:rgb(242, 215, 217);
+$color2:rgb(211, 206, 223);
+$color3:rgb(156, 180, 204);
+$color4:rgb(116, 141, 166);
+
+
+*,html,body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    box-sizing: border-box;
+    a{
+        text-decoration: none;
+    }
+    li{
+        list-style: none;
+    }
+    &::-webkit-scrollbar{
+        background-color: white;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $color2;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: white;
+    }
+}
+.container{
+    position: relative;
+    @include m.centerDiv();
+}
+.section{
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding-top: 80px;
+    z-index: 0;
+}
+.section:nth-child(2){
+    background-image: url('../assets/bg4.jpg');
+    @include m.centerDiv(space-evenly,center,row) ;
+    flex-direction: row;
+    .section-wrapper-desc{
+        border-top: 2px solid white;
+        width: 500px;
+        filter: grayscale(0);
+        font-family: $font1;
+        font-size: 1rem;
+        color: white;
+        position: relative;
+        z-index: 1;
+        &::first-letter{
+            font-size: 5rem;
+            font-weight: 500;
+            color: white;
+            text-shadow: 10px 2px 0px $color2;
+        }
+        &::first-line{
+            color: white;
+            font-size: 2rem;
+        }
+    }
+    .swiper {
+        width: 500px;
+        // border: 1px solid white;
+        margin: 0;
+      }
+  
+      .swiper-slide {
+        @include m.centerDiv();
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 400px;
+      }
+  
+      .swiper-slide img {
+        display: block;
+        width: 200px;
+        filter: grayscale(100%);
+      }
+}
+.section:nth-child(3){
+    background-color: rgb(173, 216, 230,0.5);
+}
+.section:nth-child(4){
+    background-image: url('../assets/bg2.jpg');
+}
+.section:nth-child(5){
+    background-color: rgb(255, 255, 255,0.5);
+}
+.section:nth-child(6){
+    background-image: url('../assets/bg1.jpg');
+}
+nav{
+    border-radius: 0 0 20px 20px;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    @include m.centerDiv(space-between,center,row);
+    width: 90%;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: transparent;
+    padding: 2px 8px;
+    .wrapper-title{
+        font-size: 1.5rem;
+        font-family: $font1;
+        @include m.centerDiv(center,center,row);
+        // color: rgb(116, 141, 166);
+        color: white;
+        span:nth-child(1){
+            font-size: 3rem;
+            filter: drop-shadow(10px 2px 1px rgb(242, 215, 217));
+        }
+    }
+    #menu-toggle{
+        display: none;
+    }
+    label{
+        display: none;
+    }
+    ul{
+        @include m.centerDiv(center,center,row);
+        transition: all 0.3s ease-in-out;
+        li{
+            margin: 5px;
+            a{
+                font-family: $font1;
+                font-weight: bold;
+                font-size: 1rem;
+                // color: rgb(116, 141, 166);
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width:768px){
+    body{
+        width: 100%;
+    }
+    nav{
+        .toggle{
+            display: block;
+            .toggle-check:hover{
+                background-color: blue;
+            }
+        }
+        label{
+            display: block;
+        }
+        #menu-toggle{
+            display: none;
+            &:checked ~ul{
+                @include m.centerDiv(center,center,column);
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+        ul{
+            // display: none;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 60px;
+            transform: scale(0);
+            border: 1px solid black;
+            width: 100%;
+            height: 100vh;
+            background-color: blue;
+            left: 0;
+            right: 0;
+            transition: all 0.3s ease-in-out !important;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Scss Parallax</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="wrapper-title">
+          <span>V</span>
+          <span>isenya</span>
+        </div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Main</a></li>
+          <li><a href="">About</a></li>
+        </ul>
+      </nav>
+      <div class="section">
+        <div class="section-wrapper-desc">
+          Visenya is a brave and intelligent princess who, like her mother,
+          claimed the throne as Queen of the Seven Kingdoms, sparking a civil
+          war with Aegon II Targaryen. She is a skilled dragon rider and played
+          an important role in the aerial battles during the war. Overall,
+          Visenya is a strong and important character in the history of the
+          Targaryen family.
+        </div>
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img src="./assets/visenya (1).jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/visenya (2).jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/visenya (3).jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/visenya (4).jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/visenya (5).jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/visenya (6).jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">section2</div>
+      <div class="section">section3</div>
+      <div class="section">section4</div>
+      <div class="section">section5</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var mySwiper = new Swiper(".swiper", {
+        effect: "coverflow",
+        loop:true,
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+      });
+    </script>
+  </body>
+</html>

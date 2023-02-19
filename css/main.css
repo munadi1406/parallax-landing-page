@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Righteous&display=swap");
+*, html, body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+}
+body a {
+  text-decoration: none;
+}
+body li {
+  list-style: none;
+}
+body::-webkit-scrollbar {
+  background-color: white;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(211, 206, 223);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section {
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  padding-top: 80px;
+  z-index: 0;
+}
+
+.section:nth-child(2) {
+  background-image: url("../assets/bg4.jpg");
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-direction: row;
+}
+.section:nth-child(2) .section-wrapper-desc {
+  border-top: 2px solid white;
+  width: 500px;
+  filter: grayscale(0);
+  font-family: "Comfortaa", cursive;
+  font-size: 1rem;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+.section:nth-child(2) .section-wrapper-desc::first-letter {
+  font-size: 5rem;
+  font-weight: 500;
+  color: white;
+  text-shadow: 10px 2px 0px rgb(211, 206, 223);
+}
+.section:nth-child(2) .section-wrapper-desc::first-line {
+  color: white;
+  font-size: 2rem;
+}
+.section:nth-child(2) .swiper {
+  width: 500px;
+  margin: 0;
+}
+.section:nth-child(2) .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+.section:nth-child(2) .swiper-slide img {
+  display: block;
+  width: 200px;
+  filter: grayscale(100%);
+}
+
+.section:nth-child(3) {
+  background-color: rgba(173, 216, 230, 0.5);
+}
+
+.section:nth-child(4) {
+  background-image: url("../assets/bg2.jpg");
+}
+
+.section:nth-child(5) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.section:nth-child(6) {
+  background-image: url("../assets/bg1.jpg");
+}
+
+nav {
+  border-radius: 0 0 20px 20px;
+  border-bottom: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: transparent;
+  padding: 2px 8px;
+}
+nav .wrapper-title {
+  font-size: 1.5rem;
+  font-family: "Comfortaa", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+}
+nav .wrapper-title span:nth-child(1) {
+  font-size: 3rem;
+  filter: drop-shadow(10px 2px 1px rgb(242, 215, 217));
+}
+nav #menu-toggle {
+  display: none;
+}
+nav label {
+  display: none;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transition: all 0.3s ease-in-out;
+}
+nav ul li {
+  margin: 5px;
+}
+nav ul li a {
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+  nav .toggle {
+    display: block;
+  }
+  nav .toggle .toggle-check:hover {
+    background-color: blue;
+  }
+  nav label {
+    display: block;
+  }
+  nav #menu-toggle {
+    display: none;
+  }
+  nav #menu-toggle:checked ~ ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+  nav ul {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 60px;
+    transform: scale(0);
+    border: 1px solid black;
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out !important;
+  }
+}/*# sourceMappingURL=main.css.map */
